@@ -1,13 +1,21 @@
 import React from "react";
-import galleryItems from "../../../server/modules/gallery.data";
-
+import GalleryItem from "../GalleryItem/GalleryItem";
 
 //Bring array in here?
 
-function GalleryList () {
+function GalleryList ({ GalleryList, getItem}) {
 
     return(
         <>
+        {
+            GalleryList.map((item) => {
+                <GalleryItem
+                   key={item.id}
+                   item={item}
+                   getItem={getItem}
+                 />  
+            })
+        }
         </>
     )
 }
