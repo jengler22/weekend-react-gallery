@@ -5,39 +5,37 @@ import './App.css';
 
 function App() {
 
-  let [galleryList, setGalleryList] = useState([]);
-
-  useEffect(() => {
-    getItems()
-  }, [])
+  let [galleryList, setGalleryList] = useState([])
 
   const getItems = () => {
-    axios.get('/gallery')
-    .then(response => {
-      setGalleryList(response.data)
-    }).catch(error => {
-      alert('error in get');
-      console.log(error);
+    axios.get('/gallery').then((response) => {
+      setGalleryList(response.data);
+    }).catch((error) => {
+      console.log(`error in get ${error}`);
     })
-  }
+  };
+
+  useEffect(() => {
+    getItems();
+  }, []);
+
+  
 
     return (
-      <body>
-      <div className="App">
-        <header className="App-header">
+      <>
+      <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        
-        <GalleryList
-             galleryList={galleryList}
-             getItems={getItems}
-        />     
-        
-        {/* <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/> */}
+      </header>
+      <br />
+      <div className="App">
+          <GalleryList
+              galleryList={galleryList}
+              getItems={getItems}
+          />
       </div>
-      </body>
-    );
+      </>
+  
+);
 }
 
 export default App;

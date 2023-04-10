@@ -1,14 +1,16 @@
+import { useState, useEffect } from "react";
 import React from "react";
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-//Bring array in here?
 
-function GalleryList ({ GalleryList, getItem}) {
+
+function GalleryList ({ galleryList, getItem}) {
+    // const [list, setGalleryList] = useState([]);
 
     return(
-        <>
+        <div>
         {
-            GalleryList.map((item) => {
+            galleryList.map((item) => {
                 <GalleryItem
                    key={item.id}
                    item={item}
@@ -16,7 +18,7 @@ function GalleryList ({ GalleryList, getItem}) {
                  />  
             })
         }
-        </>
+        </div>
     )
 }
 

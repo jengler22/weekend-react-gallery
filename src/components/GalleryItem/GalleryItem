@@ -1,9 +1,51 @@
+import axios from "axios";
+import { response } from "express";
+import React, {useState, useEffect} from "react";
 
+ 
+function GalleryItem ({item, getItem}) {
+     const[likeCount, setLikeCount] = useState(item.likes)
+     const[toggleDescription, setDescription] = useState(false);
 
-function GalleryItem () {
+       const addlike = () => {
+        axios.put(`/gallery/like/${item.id}`).then((response) => {
+            setLikeCount(likeCount + 1);
+        }).catch((error) => {
+            console.log('error in post');
+            alert('check client POST');
+        });
+       }
+       
+       const seeDescription = () => {
+           if(toggleDescription === true) {
+            return(
+                <p onClick={() => setDescription(!toggleDescription)}>{'\"'+item.description+'\"'} </p>
+            )
+           } else {
+            return (
+                <img onClick={() => setDescription(!toggleDescription)} src={item.path} />
+            )
+           }
+       }
+
 
     return(
         <>
+        <p> 
+            {
+                seeDescription()
+            }
+        </p>
+        <p>{likeCount} likes
+        <div />
+        <button onClick={addlike}>Like</button>
+        <div />
+        <button onClick={() => setDescription(!toggleDescription)}>
+            {toggleDescription ? 'image' : 'Description'}
+        </button>
+
+        </p>
+        
         
         </>
     )
