@@ -1,25 +1,25 @@
-import { useState, useEffect } from "react";
-import React from "react";
-import GalleryItem from "../GalleryItem/GalleryItem";
+import React, { useState, useEffect } from "react";
+import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
 
 
-function GalleryList ({ galleryList, getItem}) {
-    // const [list, setGalleryList] = useState([]);
-
+function GalleryList ({ myGalleryList, getItem}) {
+    
     return(
         <div>
-        {
-            galleryList.map((item) => {
-                <GalleryItem
-                   key={item.id}
-                   item={item}
-                   getItem={getItem}
-                 />  
-            })
-        }
-        </div>
-    )
+        <h2>Gallery List</h2>
+        <p>
+        {myGalleryList.map((item) => (
+            <GalleryItem 
+                key={item.id} 
+                item={item} 
+                getItem={getItem}
+            />
+        ))}
+        </p>
+    </div>
+    );
 }
+
 
 export default GalleryList;

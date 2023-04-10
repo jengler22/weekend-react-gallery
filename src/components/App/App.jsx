@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
 
-  let [galleryList, setGalleryList] = useState([])
+  let [myGalleryList, setGalleryList] = useState([])
 
   const getItems = () => {
     axios.get('/gallery').then((response) => {
@@ -29,7 +29,7 @@ function App() {
       <br />
       <div className="App">
           <GalleryList
-              galleryList={galleryList}
+              myGalleryList={myGalleryList}
               getItems={getItems}
           />
       </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { response } from "express";
-import React, {useState, useEffect} from "react";
+import React from "react";
+import {useState, useEffect} from "react";
 
  
 function GalleryItem ({item, getItem}) {
