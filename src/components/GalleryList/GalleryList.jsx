@@ -4,7 +4,7 @@ import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
 
 function GalleryList ({ myGalleryList, getItem}) {
-    
+    // lopping over arrray of photos
     return(
         <div>
         <h2>Gallery List</h2>

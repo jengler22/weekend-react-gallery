@@ -28,6 +28,7 @@ function App() {
       </header>
       <br />
       
+      
           <GalleryList
               myGalleryList={myGalleryList}
               getItems={getItems}

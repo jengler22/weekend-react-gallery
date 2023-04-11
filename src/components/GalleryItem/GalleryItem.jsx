@@ -7,6 +7,7 @@ function GalleryItem ({item, getItem}) {
      const[likeCount, setLikeCount] = useState(item.likes)
      const[toggleDescription, setDescription] = useState(false);
 
+        // function to add likes to photos
        const addlike = () => {
         axios.put(`/gallery/like/${item.id}`).then((response) => {
             setLikeCount(likeCount + 1);
@@ -15,7 +16,8 @@ function GalleryItem ({item, getItem}) {
             alert('check client POST');
         });
        }
-       
+
+    //    Code to toggle descripton of each photo
        const seeDescription = () => {
            if(toggleDescription === true) {
             return(
@@ -35,6 +37,8 @@ function GalleryItem ({item, getItem}) {
             {
                 seeDescription()
             }
+
+            {/* // created buttons for both like and toggle Description */}
         </div>
         <div>{likeCount} likes
         <div />
