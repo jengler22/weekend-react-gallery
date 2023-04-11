@@ -31,12 +31,12 @@ function GalleryItem ({item, getItem}) {
 
     return(
         <>
-        <p> 
+        <div> 
             {
                 seeDescription()
             }
-        </p>
-        <p>{likeCount} likes
+        </div>
+        <div>{likeCount} likes
         <div />
         <button onClick={addlike}>Like</button>
         <div />
@@ -44,7 +44,7 @@ function GalleryItem ({item, getItem}) {
             {toggleDescription ? 'image' : 'Description'}
         </button>
 
-        </p>
+        </div>
         
         
         </>
