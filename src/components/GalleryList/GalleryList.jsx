@@ -8,7 +8,8 @@ function GalleryList ({ myGalleryList, getItem}) {
     return(
         <div>
         <h2>Gallery List</h2>
-        <p>
+        {/* {JSON.stringify(myGalleryList)} */}
+        <div>
         {myGalleryList.map((item) => (
             <GalleryItem 
                 key={item.id} 
@@ -16,7 +17,7 @@ function GalleryList ({ myGalleryList, getItem}) {
                 getItem={getItem}
             />
         ))}
-        </p>
+        </div>
     </div>
     );
 }

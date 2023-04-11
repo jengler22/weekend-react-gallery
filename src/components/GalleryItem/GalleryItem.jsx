@@ -19,7 +19,7 @@ function GalleryItem ({item, getItem}) {
        const seeDescription = () => {
            if(toggleDescription === true) {
             return(
-                <p onClick={() => setDescription(!toggleDescription)}>{'\"'+item.description+'\"'} </p>
+               <div onClick={() => setDescription(!toggleDescription)}>{'\"'+item.description+'\"'} </div>
             )
            } else {
             return (
