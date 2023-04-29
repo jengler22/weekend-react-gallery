@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import {useState, useEffect} from "react";
+import { Container, Grid } from "@mui/material";
+
 
  
 function GalleryItem ({item, getItem}) {
@@ -31,28 +33,28 @@ function GalleryItem ({item, getItem}) {
        }
 
 
-    return(
-        <>
-        <div> 
-            {
-                seeDescription()
-            }
-
-            {/* // created buttons for both like and toggle Description */}
-        </div>
-        <div>{likeCount} likes
-        <div />
-        <button onClick={addlike}>Like</button>
-        <div />
-        <button onClick={() => setDescription(!toggleDescription)}>
-            {toggleDescription ? 'image' : 'Description'}
-        </button>
-
-        </div>
-        
-        
-        </>
-    )
+       return (
+        <Container textAlign="center">
+      <Grid container justifyContent="center" alignItems="center">
+        <Grid item>
+          {seeDescription()}
+          <div>
+            {likeCount} likes
+            <div />
+            <button onClick={addlike}>Like</button>
+            <div />
+            <button onClick={() => setDescription(!toggleDescription)}>
+              {toggleDescription ? "image" : "Description"}
+            </button>
+          </div>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 }
+    
+
+       
+        
 
 export default GalleryItem;
